@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age cheking for loop </title>
+</head>
+<style>
+body {
+    background: linear-gradient(120deg, #f8ffae 0%, #43c6ac 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+    margin-top: 2em;
+    letter-spacing: 2px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 2em;
+}
+
+.container {
+    background: #fff;
+    max-width: 400px;
+    margin: 2em auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(60, 60, 60, 0.15);
+    padding: 2em 2.5em 2.5em 2.5em;
+}
+
+label, p {
+    color: #444;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 1.2em;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border 0.2s;
+}
+
+input[type="number"]:focus {
+    border: 1.5px solid #43c6ac;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.8em;
+    background: #43c6ac;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 1.5em;
+}
+
+button:hover {
+    background: #2e8b7a;
+}
+
+#result {
+    background: #f7fff7;
+    border: 2px solid #43c6ac;
+    border-radius: 8px;
+    padding: 1em;
+    color: #222;
+    font-size: 1.1em;
+    min-height: 2em;
+    margin-top: 1em;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(67, 198, 172, 0.07);
+}
+</style>
+
+<body>
+    <h1>voting checking </h1>
+    <p>enter your first age </p>
+    <input type="number" id="num1" placeholder="enter your first age ">
+
+     <p>enter your secnd age </p>
+    <input type="number" id="num2" placeholder="enter your second age ">
+
+     <p>enter your third age </p>
+    <input type="number" id="num3" placeholder="enter your third age "> <br>
+
+    <button onclick="ageChecking()">check</button>
+
+    <h2>result</h2>
+    <p id="result"></p>
+
+    <script>
+            
+            function ageChecking(){
+                let age1 = Number(document.getElementById("num1").value);
+
+                let age2 = Number(document.getElementById("num2").value);
+
+                let age3 = Number(document.getElementById("num3").value);
+
+              
+
+                let ages = [age1, age2, age3];
+
+                  document.getElementById("result").innerHTML="";
+
+                for (let i = 0; i < ages.length; i++) {
+
+                    
+            if (ages[i] >= 18) {
+                document.getElementById("result").innerHTML+= "Age " + ages[i] + " you can vote ! Aprove <br>" 
+
+            }else{
+                document.getElementById("result").innerHTML+= "Age " + ages[i] + " Nope You Cant Vote ! <br>"
+            }
+                    
+                }
+            }
+
+
+    </script>
+
+</body>
+</html>
