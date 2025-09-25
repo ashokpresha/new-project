@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hey this is a calculator basic
+    </title>
+    <style>
+        :root {
+            --color: rgb(22, 25, 39);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top: 5em;
+            background-color: var(--color);
+
+        }
+
+        .container {
+            display: inline-block;
+            border: 1px solid rgb(255, 255, 255);
+            margin: 10px;
+            width: 25%;
+            padding: 1em;
+            border-radius: 7px;
+              box-shadow: -6px -2px 14px 0px rgb(182, 181, 181);
+            
+           
+           
+        }
+
+        #display {
+            margin-bottom: 1em;
+            width: 75%;
+            height: 40px;
+            text-align: right;
+            font-size: 2.2em;
+            border: none;
+            color: white;
+            background-color: var(--color);
+        }
+
+        .btn {
+            padding: 1em;
+            margin: 10px;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 1em;
+            border: none;
+            background-color: var(--color);
+            color: greenyellow;
+             box-shadow: -6px -2px 14px 0px rgb(182, 181, 181);
+        }
+
+        .btn1 {
+            padding: 1.3em;
+            margin: 9px;
+            width: 55px;
+            height: 55px;
+            font-size: 1em;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--color);
+            color: white;
+            box-shadow: -6px -2px 14px 0px rgb(182, 181, 181);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        function num(val){
+
+            document.getElementById("display").value +=val;
+        }
+
+        function solve(){
+            let x = document.getElementById("display").value;
+            let y = eval(x);
+
+            document.getElementById("display").value=y;
+        }
+
+         function clear(){
+
+            document.getElementById("display").value="";
+         }
+    </script>
+    <div class="container">
+        <input type="text" placeholder="0" id="display" >
+        <div class="rownumbers">
+            <button class="btn" onclick="clear()">AC</button>
+            <button class="btn" onclick="num('')">DEL</button>
+            <button class="btn" onclick="num('%')">%</button>
+            <button class="btn" onclick="num('/')">/</button>
+        </div>
+        <div class="rownumbers">
+            <button class="btn1" onclick="num(7)">7</button>
+            <button class="btn1"onclick="num(8)" >8</button>
+            <button class="btn1"onclick="num(9)" >9</button>
+            <button class="btn1"onclick="num('*')" >*</button>
+        </div>
+        <div class="rownumbers">
+            <button class="btn1" onclick="num(4)" >4</button>
+            <button class="btn1" onclick="num(5)">5</button>
+            <button class="btn1" onclick="num(6)">6</button>
+            <button class="btn1"onclick="num('-')">-</button>
+        </div>
+        <div class="rownumbers">
+            <button class="btn1" onclick="num(1)">1</button>
+            <button class="btn1"onclick="num(2)">2</button>
+            <button class="btn1"onclick="num(3)">3</button>
+            <button class="btn1"onclick="num('+')">+</button>
+        </div>
+        <div class="rownumbers">
+            <button class="btn1"onclick="num(00)">00</button>
+            <button class="btn1"onclick="num(0)">0</button>
+            <button class="btn1"onclick="num('.')">.</button>
+            <button class="btn1"onclick="solve('=')">=</button>
+        </div>
+    </div>
+</body>
+
+</html>
