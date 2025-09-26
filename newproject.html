@@ -80,23 +80,20 @@
             document.getElementById("display").value +=val;
         }
 
-        function solve(){
-            let x = document.getElementById("display").value;
-            let y = eval(x);
+       function clearDisplay(){
 
-            document.getElementById("display").value=y;
-        }
-
-         function clear(){
-
-            document.getElementById("display").value="";
+        document.getElementById("display").value="";
+         }
+         function del(){
+            document.getElementById("display");
+            display.value = display.value.slice(0, -1);
          }
     </script>
     <div class="container">
         <input type="text" placeholder="0" id="display" >
         <div class="rownumbers">
-            <button class="btn" onclick="clear()">AC</button>
-            <button class="btn" onclick="num('')">DEL</button>
+            <button class="btn" onclick="clearDisplay()">AC</button>
+            <button class="btn" onclick="del()">DEL</button>
             <button class="btn" onclick="num('%')">%</button>
             <button class="btn" onclick="num('/')">/</button>
         </div>
@@ -126,5 +123,6 @@
         </div>
     </div>
 </body>
+
 
 </html>
