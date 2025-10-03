@@ -12,6 +12,7 @@
         }
 
         body {
+        
             margin: 0;
             padding: 0;
             text-align: center;
@@ -24,7 +25,7 @@
             display: inline-block;
             border: 1px solid rgb(255, 255, 255);
             margin: 10px;
-            width: 25%;
+            width: 20em;
             padding: 1em;
             border-radius: 7px;
               box-shadow: -6px -2px 14px 0px rgb(182, 181, 181);
@@ -36,7 +37,7 @@
         #display {
             margin-bottom: 1em;
             width: 75%;
-            height: 40px;
+            height: 1em;
             text-align: right;
             font-size: 2.2em;
             border: none;
@@ -69,26 +70,45 @@
             color: white;
             box-shadow: -6px -2px 14px 0px rgb(182, 181, 181);
         }
+        h2{
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <script>
+function num(val){
+    document.getElementById("display").value +=val;
 
-        function num(val){
+}
 
-            document.getElementById("display").value +=val;
-        }
+function solve(){
 
-       function clearDisplay(){
+    let x = document.getElementById("display").value;
 
-        document.getElementById("display").value="";
-         }
-         function del(){
-            document.getElementById("display");
-            display.value = display.value.slice(0, -1);
-         }
+    let y = eval(x);
+
+    document.getElementById("display").value= y;
+
+
+
+}
+
+function clearDisplay(){
+    document.getElementById("display").value = "";
+
+}
+
+function del(){
+
+    document.getElementById("display").value;
+
+    display.value= display.value.slice(0,-1);
+}
     </script>
+
+    <h2>Calculate Your Number</h2>
     <div class="container">
         <input type="text" placeholder="0" id="display" >
         <div class="rownumbers">
@@ -123,6 +143,5 @@
         </div>
     </div>
 </body>
-
 
 </html>
