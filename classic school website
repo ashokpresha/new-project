@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Garamond', serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Georgia', 'Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        body {
+            line-height: 1.7;
+            background-color: #faf8f3;
+            color: #3a3a3a;
+        }
+
+        /* NAVBAR */
+        header {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            color: #f5f1eb;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-family: 'Georgia', serif;
+            color: #d4af37;
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #f5f1eb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* HERO */
+        .hero {
+            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1588072432836-e10032774350') no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f5f1eb;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            color: #f5f1eb;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+            font-family: 'Georgia', serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #d4af37;
+            color: #1a2a3a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero button:hover {
+            background: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* SECTION */
+        .section1 {
+            padding: 80px 20px;
+            text-align: left;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f1eb 0%, #ffffff 50%, #f5f1eb 100%);
+        }
+
+        .about-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .about-header h2 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #8b4513, #d4a574, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #8b4513, #d4a574);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #555;
+            padding: 20px;
+            background: white;
+            border-left: 5px solid #8b4513;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 3px solid #8b4513;
+            top: 15px;
+            left: 15px;
+            border-radius: 15px;
+        }
+
+        .about-image-wrapper img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            text-align: center;
+        }
+
+        .border {
+            border: 2px solid #d4af37;
+            width: 40px;
+        }
+
+
+
+
+
+        /* CONTACT */
+        form input,
+        form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #d4af37;
+            border-radius: 0;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background: #1a2a3a;
+            color: #f5f1eb;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #d4af37;
+            color: #1a2a3a;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            color: #f5f1eb;
+            text-align: center;
+            padding: 20px;
+            border-top: 3px solid #d4af37;
+        }
+
+        .img1 {
+            width: 350px;
+            height: 300px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+
+            /* float: right; */
+        }
+
+        .img1:hover {
+            transform: scale(1.05);
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flex-content {
+            flex: 1;
+        }
+
+        .flex-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about {
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            background-clip: unset;
+            color: #1a2a3a;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #d4af37;
+        }
+
+        .para {
+            color: #3a3a3a;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* GALLERY - SIDE BY SIDE */
+        .gallery-container {
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .gallery-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .gallery-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-column h3 {
+            color: #1a2a3a;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+
+        /* PHOTO GALLERY */
+        .gallery-section {
+            padding: 0;
+            background: transparent;
+        }
+
+        .gallery-section h2 {
+            display: none;
+        }
+
+        .gallery {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slider {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(44, 62, 80, 0.8);
+            color: #f5f1eb;
+            padding: 15px;
+        }
+
+        .overlay p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* VIDEO GALLERY */
+        .video-gallery {
+            padding: 0;
+            background: transparent;
+        }
+
+        .video-gallery h2 {
+            display: none;
+        }
+
+        .videos-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: grid;
+            margin: 0 auto;
+            height: 300px;
+        }
+
+        .video-card {
+            grid-column: 1;
+            grid-row: 1;
+            display: none;
+        }
+
+        .video-card.active {
+            display: block;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 60%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(44, 62, 80, 0.8);
+            color: #f5f1eb;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .video-info h3 {
+            color: #f5f1eb;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .video-info p {
+            color: #ddd;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            line-height: 1.3;
+        }
+
+        /* FEATURES SECTION */
+        .features {
+            padding: 60px 20px;
+            background: #faf8f3;
+        }
+
+        .features h2 {
+            color: #1a2a3a;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #ffffff, #f9f6f1);
+            padding: 30px;
+            border-radius: 0;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+            text-align: center;
+            transition: 0.3s;
+            border-top: 4px solid #d4af37;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card h3 {
+            color: #1a2a3a;
+            margin: 15px 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .feature-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #8b4513;
+        }
+
+        /* ACADEMICS SECTION */
+        .academics {
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .academics h2 {
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+            background-clip: unset;
+            color: #1a2a3a;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: linear-gradient(135deg, #f5f1eb 0%, #fff 100%);
+            padding: 25px;
+            border-radius: 0;
+            border-left: 5px solid #d4af37;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .course-card h3 {
+            color: #1a2a3a;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .course-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* STATS SECTION */
+        .stats {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            color: #f5f1eb;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .stat-number {
+            display: inline-block;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            color: #f5f1eb;
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            padding: 60px 20px;
+            background: #faf8f3;
+        }
+
+        .testimonials h2 {
+            color: #1a2a3a;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff, #f9f6f1);
+            padding: 30px;
+            border-radius: 0;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .testimonial-card p {
+            color: #3a3a3a;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            color: #1a2a3a;
+            font-weight: bold;
+        }
+
+        /* CALL TO ACTION */
+        .cta-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            color: #f5f1eb;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+            font-family: 'Georgia', serif;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: #d4af37;
+            color: #1a2a3a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #ffd700;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* IMPORTANT LINKS SECTION */
+        .links-section {
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .links-section h2 {
+            color: #1a2a3a;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .links-table-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .links-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .links-table thead {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%);
+            color: #f5f1eb;
+        }
+
+        .links-table th {
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 3px solid #d4af37;
+            font-size: 1.1rem;
+        }
+
+        .links-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #3a3a3a;
+            font-size: 1rem;
+        }
+
+        .links-table tbody tr:hover {
+            background-color: #f5f1eb;
+        }
+
+        .links-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .links-table a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .links-table a:hover {
+            color: #1a2a3a;
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            color: #1a2a3a;
+            font-weight: 500;
+        }
+
+        
+
+        
+
+        /* VIDEO GALLERY SECTION */
+        .video-gallery {
+            padding: 60px 20px;
+            background: #faf8f3;
+        }
+
+        .video-gallery h2 {
+            color: #1a2a3a;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background: linear-gradient(135deg, #ffffff, #f9f6f1);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-info h3 {
+            color: #1a2a3a;
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: bold;
+        }
+
+        .video-info p {
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            line-height: 1.3;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .gallery-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .flex {
+                gap: 30px;
+                flex-direction: column;
+            }
+
+            .img1 {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .stats-container {
+                gap: 20px;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-header h2 {
+                font-size: 2rem;
+            }
+        }
+        .course-card{
+            transition: 0.3s;
+        }
+        .course-card:hover{
+            
+            transform: translateY(-5px);
+              box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav>
+            <h1>Classic School</h1>
+            <ul>
+                <li><a href="mainhomepage.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div>
+            <h2>Welcome to Our School</h2>
+            <p>Tradition Meets Modern Education</p>
+            <button onclick="alert('Admission Coming Soon!')">Apply Now</button>
+        </div>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <h2>Why Choose Classic School?</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Expert Faculty</h3>
+                <p>Experienced and dedicated teachers committed to student excellence and personalized learning.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Academic Excellence</h3>
+                <p>Proven track record of academic achievement and student success in competitive exams.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Holistic Development</h3>
+                <p>Programs designed to develop intellectual, physical, and creative abilities of students.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🖥️</div>
+                <h3>Modern Facilities</h3>
+                <p>State-of-the-art laboratories, libraries, and digital infrastructure for quality education.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Global Perspective</h3>
+                <p>International curriculum and exchange programs for global awareness and exposure.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Student Support</h3>
+                <p>Comprehensive counseling and mentoring services for student welfare and growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMICS SECTION -->
+    <section class="academics">
+        <h2>Our Academic Programs</h2>
+        <div class="courses-container">
+            <div class="course-card">
+                <h3>Primary Section (I-V)</h3>
+                <p>Foundation building with focus on fundamental concepts, creativity, and personality development through interactive learning methods.</p>
+            </div>
+            <div class="course-card">
+                <h3>Middle Section (VI-VIII)</h3>
+                <p>Development of critical thinking and analytical skills with emphasis on science, mathematics, and humanities subjects.</p>
+            </div>
+            <div class="course-card">
+                <h3>Secondary Section (IX-X)</h3>
+                <p>Comprehensive curriculum preparing students for board examinations with expert guidance and continuous assessment.</p>
+            </div>
+            <div class="course-card">
+                <h3>Senior Section (XI-XII)</h3>
+                <p>Specialized streams (Science, Commerce, Humanities) with career counseling and competitive exam preparation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS SECTION -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3><span class="stat-number" data-target="25">0</span>+</h3>
+                <p>Years of Excellence</p>
+            </div>
+            <div class="stat-item">
+                <h3><span class="stat-number" data-target="500">0</span>+</h3>
+                <p>Students Enrolled</p>
+            </div>
+            <div class="stat-item">
+                <h3><span class="stat-number" data-target="40">0</span>+</h3>
+                <p>Experienced Faculty</p>
+            </div>
+            <div class="stat-item">
+                <h3><span class="stat-number" data-target="95">0</span>%</h3>
+                <p>Success Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <h2>Student & Parent Testimonials</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <p>"Classic School has transformed my learning experience. The teachers are incredibly supportive and the curriculum is well-structured. Highly recommended!"</p>
+                <div class="testimonial-author">- Rahul Kumar, Class X</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"I'm impressed with the holistic approach to education. My child has developed confidence and excellent academic skills here."</p>
+                <div class="testimonial-author">- Mrs. Sharma, Parent</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"The modern facilities and experienced faculty make learning enjoyable. I've improved significantly in all subjects."</p>
+                <div class="testimonial-author">- Priya Singh, Class VIII</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPORTANT LINKS SECTION -->
+    <section class="links-section">
+        <h2>Important Links & Information</h2>
+        <div class="links-table-wrapper">
+            <table class="links-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Details</th>
+                        <th>Contact/Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>School Address</strong></td>
+                        <td>123 Education Lane, City Center</td>
+                        <td><span class="contact-info">📍 View Map</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone</strong></td>
+                        <td>For General Inquiries</td>
+                        <td><span class="contact-info">📞 +1-800-SCHOOL-1</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td>Main Contact Email</td>
+                        <td><a href="mailto:info@classicschool.edu">info@classicschool.edu</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Admission</strong></td>
+                        <td>Admission Queries</td>
+                        <td><a href="mailto:admission@classicschool.edu">admission@classicschool.edu</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Online Portal</strong></td>
+                        <td>Student Information System</td>
+                        <td><a href="https://portal.classicschool.edu" target="_blank">Access Portal</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Library</strong></td>
+                        <td>Digital & Physical Resources</td>
+                        <td><a href="https://library.classicschool.edu" target="_blank">Visit Library</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Academic Calendar</strong></td>
+                        <td>2025-2026 Schedule</td>
+                        <td><a href="#" onclick="downloadAcademicCalendar()">📥 Download</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fee Structure</strong></td>
+                        <td>Tuition & Charges</td>
+                        <td><a href="javascript:void(0);" onclick="downloadFeeStructure(event)">📥 Download</a>  |   <a href="feestructre.html"> View Fee Structure</a></td>
+                       
+                    </tr>
+                    <tr>
+                        <td><strong>Social Media</strong></td>
+                        <td>Follow Us Online</td>
+                        <td><a href="#" target="_blank">Facebook</a> | <a href="#" target="_blank">Instagram</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Career</strong></td>
+                        <td>Job Opportunities</td>
+                        <td><a href="mailto:careers@classicschool.edu">careers@classicschool.edu</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Classic School | All Rights Reserved</p>
+    </footer>
+
+
+</body>
+<script>
+    function submitForm(e) {
+        e.preventDefault();
+        alert("Message Sent!");
+    }
+
+    // Photo Gallery Slides
+    let slides = document.querySelectorAll(".slide");
+    let photoIndex = 0;
+
+    function showPhotoSlide() {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[photoIndex].classList.add("active");
+        photoIndex++;
+        if (photoIndex >= slides.length) {
+            photoIndex = 0;
+        }
+    }
+
+    setInterval(showPhotoSlide, 2000);
+
+    // Video Gallery Slides
+    let videoCards = document.querySelectorAll(".video-card");
+    let videoIndex = 0;
+
+    function showVideoSlide() {
+        videoCards.forEach(card => card.classList.remove("active"));
+        videoCards[videoIndex].classList.add("active");
+        videoIndex++;
+        if (videoIndex >= videoCards.length) {
+            videoIndex = 0;
+        }
+    }
+
+    setInterval(showVideoSlide, 2000);
+
+    // Counter Animation for Stats
+    function countUp(element, target, duration = 2000) {
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    }
+
+    // Intersection Observer to trigger counter when section is visible
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll(".stat-number");
+                statNumbers.forEach(num => {
+                    const target = parseInt(num.getAttribute("data-target"));
+                    countUp(num, target);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const statsSection = document.querySelector(".stats");
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
+
+    // Download Academic Calendar
+    function downloadAcademicCalendar(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        const content = `CLASSIC SCHOOL - ACADEMIC CALENDAR 2025-2026
+
+========================================
+SCHOOL CALENDAR & IMPORTANT DATES
+========================================
+
+ACADEMIC YEAR: 2025-2026
+
+TERM I: April 2025 - August 2025
+- School Opens: April 1, 2025
+- Summer Vacation: June 15 - July 15, 2025
+- Term I Exams: August 1-15, 2025
+- Term I Ends: August 31, 2025
+
+TERM II: September 2025 - December 2025
+- School Reopens: September 1, 2025
+- Diwali Break: October 20-31, 2025
+- Term II Exams: November 15-30, 2025
+- Winter Vacation: December 15, 2025 - January 10, 2026
+
+TERM III: January 2026 - March 2026
+- School Reopens: January 11, 2026
+- Republic Day: January 26, 2026 (Holiday)
+- Annual Day: February 15, 2026
+- Term III Exams: March 1-15, 2026
+- Final Results: March 25, 2026
+
+IMPORTANT EVENTS:
+- Founder's Day: May 10, 2025
+- Sports Day: July 20, 2025
+- Annual Function: February 15, 2026
+- Graduation Day: March 28, 2026
+
+HOLIDAYS:
+- National Holidays: As per government notification
+- School Holidays: As mentioned above
+- Weekends: Saturdays & Sundays (Closed)
+
+For more details, visit: www.classicschool.edu
+Contact: +1-800-SCHOOL-1`;
+
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Academic_Calendar_2025-2026.txt';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        return false;
+    }
+
+    // Download Fee Structure
+    function downloadFeeStructure(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        const content = `CLASSIC SCHOOL - FEE STRUCTURE 2025-2026
+
+========================================
+DETAILED FEE BREAKDOWN
+========================================
+
+PRIMARY SECTION (Classes I-V):
+- Monthly Tuition Fee: ₹5,000
+- Annual Tuition: ₹60,000
+- Exam Fee: ₹2,500
+- Total Annual Fee: ₹62,500
+
+MIDDLE SECTION (Classes VI-VIII):
+- Monthly Tuition Fee: ₹7,500
+- Annual Tuition: ₹90,000
+- Exam Fee: ₹3,500
+- Total Annual Fee: ₹93,500
+
+SECONDARY SECTION (Classes IX-X):
+- Monthly Tuition Fee: ₹10,000
+- Annual Tuition: ₹120,000
+- Exam Fee: ₹5,000
+- Total Annual Fee: ₹125,000
+
+SENIOR SECTION (Classes XI-XII):
+- Monthly Tuition Fee: ₹12,000
+- Annual Tuition: ₹144,000
+- Exam Fee: ₹6,000
+- Total Annual Fee: ₹150,000
+
+ADDITIONAL SERVICES:
+- Hostel Facility (Annual): ₹180,000
+- Uniform & Books (Annual): ₹5,000
+- Transport Fee (Annual): ₹24,000
+
+PAYMENT TERMS:
+- Fees payable in 12 monthly installments
+- Advance payment discount: 5% (if paid by April)
+- Late payment fine: 2% per month
+
+DISCOUNTS & SCHOLARSHIPS:
+- Merit Scholarship: 10-25% (Based on academic performance)
+- Sibling Discount: 10% for second child, 15% for third child
+- Economically Weaker Section (EWS): Available on merit basis
+- Sports Excellence Scholarship: 15-20%
+
+REFUND POLICY:
+- 100% refund if withdrawal before May 31
+- 50% refund if withdrawal before September 30
+- No refund after September 30
+
+NOTE: All fees are inclusive of GST at applicable rates.
+For scholarship applications, contact: scholarship@classicschool.edu
+For payment plans, contact: accounts@classicschool.edu
+Admission Helpline: +1-800-SCHOOL-1`;
+
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Fee_Structure_2025-2026.txt';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        return false;
+    }
+</script>
+</script>
+
+</html>
