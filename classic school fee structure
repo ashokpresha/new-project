@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f5f1eb;
+        }
+        /* NAVBAR */
+        header {
+            background: #2c3e50;
+            color: #f5f1eb;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-family: serif;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #f5f1eb;
+            text-decoration: none;
+        }
+        /* FEE STRUCTURE SECTION */
+        .fee-section {
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .fee-section h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .fee-table-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .fee-table thead {
+            background: #8b4513;
+            color: #f5f1eb;
+        }
+
+        .fee-table th {
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 3px solid #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .fee-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .fee-table tbody tr:nth-child(even) {
+            background-color: #f9f7f4;
+        }
+
+        .fee-table tbody tr:hover {
+            background-color: #f5f1eb;
+        }
+
+        .fee-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fee-amount {
+            color: #8b4513;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .fee-note {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff3cd;
+            border-left: 5px solid #8b4513;
+            border-radius: 5px;
+            color: #333;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+     <!-- NAVBAR -->
+    <header>
+        <nav>
+            <h1>Classic School</h1>
+            <ul>
+                <li><a href="mainhomepage.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- FEE STRUCTURE SECTION -->
+    <section class="fee-section">
+        <h2>Fee Structure</h2>
+        <div class="fee-table-wrapper">
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Class/Section</th>
+                        <th>Monthly Fee</th>
+                        <th>Annual Fee</th>
+                        <th>Exam Fee</th>
+                        <th>Total Annual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Primary (I-V)</strong></td>
+                        <td class="fee-amount">₹5,000</td>
+                        <td class="fee-amount">₹60,000</td>
+                        <td class="fee-amount">₹2,500</td>
+                        <td class="fee-amount">₹62,500</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Middle (VI-VIII)</strong></td>
+                        <td class="fee-amount">₹7,500</td>
+                        <td class="fee-amount">₹90,000</td>
+                        <td class="fee-amount">₹3,500</td>
+                        <td class="fee-amount">₹93,500</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Secondary (IX-X)</strong></td>
+                        <td class="fee-amount">₹10,000</td>
+                        <td class="fee-amount">₹120,000</td>
+                        <td class="fee-amount">₹5,000</td>
+                        <td class="fee-amount">₹125,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Senior (XI-XII)</strong></td>
+                        <td class="fee-amount">₹12,000</td>
+                        <td class="fee-amount">₹144,000</td>
+                        <td class="fee-amount">₹6,000</td>
+                        <td class="fee-amount">₹150,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hostel Facility</strong></td>
+                        <td class="fee-amount">₹15,000</td>
+                        <td class="fee-amount">₹180,000</td>
+                        <td>—</td>
+                        <td class="fee-amount">₹180,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uniform & Books</strong></td>
+                        <td>—</td>
+                        <td class="fee-amount">₹5,000</td>
+                        <td>—</td>
+                        <td class="fee-amount">₹5,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transport Fee</strong></td>
+                        <td class="fee-amount">₹2,000</td>
+                        <td class="fee-amount">₹24,000</td>
+                        <td>—</td>
+                        <td class="fee-amount">₹24,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="fee-note">
+            <strong>📌 Important Note:</strong> Fee structure mentioned above is indicative and may vary. Discounts available for meritorious students and siblings. Scholarship programs available for deserving candidates. For detailed fee information and payment plans, please contact the admission office at <strong>admission@classicschool.edu</strong> or <strong>+1-800-SCHOOL-1</strong>
+        </div>
+    </section>
+</body>
+</html>
